@@ -34,11 +34,11 @@ interface IStaking {
     function index() external view returns (uint256);
 }
 
-// Treasury loans OHM, increasing max debt
-// OHM is lent out Alchemix style which decreases max debt
-// once max debt is hit the contract stops lending
-// the contracts starts lending again once loans are paid back, 
-// or the treasury provides another loan thus increasing max debt
+// Treasury allocates OHM to this contract, increasing max debt
+// that OHM is lent out Alchemix style
+// once total debt = max debt the contract stops lending OHM (because there's none to be lent)
+// as users payback their loans, total debt decreases allowsing for laons again
+// additionally, at any time the treasury can allocate more OHM to lend
 contract OlympusLoansAllocator {
 
     using SafeERC20 for address;
