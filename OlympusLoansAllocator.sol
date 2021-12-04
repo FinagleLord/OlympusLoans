@@ -124,8 +124,8 @@ contract OlympusLoansAllocator {
         user.debt -= amount;
     }
 
-    /// @notice borrow OHM, using your OHM as collateral
-    /// you can withdraw your OHM once its interest has paid off your debt
+    /// @notice borrow OHM, using your sOHM as collateral
+    /// you can withdraw your sOHM once its interest has paid off your debt
     function takeLoan(
         uint256 input, 
         uint256 output
